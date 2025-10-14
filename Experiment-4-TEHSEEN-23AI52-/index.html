@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form Validation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      width: 48%;
+      padding: 10px;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+    }
+
+    input[type="reset"] {
+      background-color: #6c757d;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    input[type="reset"]:hover {
+      background-color: #5a6268;
+    }
+  </style>
+
+  <script>
+    function validateForm() {
+      const form = document.forms["regForm"];
+      const fname = form["fname"].value.trim();
+      const lname = form["lname"].value.trim();
+      const password = form["password"].value.trim();
+      const email = form["email"].value.trim();
+      const mobile = form["mobile"].value.trim();
+      const address = form["address"].value.trim();
+
+      if (!/^[A-Za-z]{3,}$/.test(fname)) {
+        alert("⚠️ First Name should contain only letters (min 3 characters).");
+        return false;
+      }
+
+      if (lname === "") {
+        alert("⚠️ Last Name cannot be empty.");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("⚠️ Password must be at least 6 characters long.");
+        return false;
+      }
+
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        alert("⚠️ Please enter a valid email (example: name@domain.com).");
+        return false;
+      }
+
+      if (!/^[0-9]{10}$/.test(mobile)) {
+        alert("⚠️ Mobile number must be exactly 10 digits.");
+        return false;
+      }
+
+      if (address === "") {
+        alert("⚠️ Address cannot be empty.");
+        return false;
+      }
+
+      alert(`✅ Registration Successful!\n\nName: ${fname} ${lname}\nEmail: ${email}`);
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <form name="regForm" onsubmit="return validateForm()">
+      <label>First Name:</label>
+      <input type="text" name="fname" placeholder="Enter first name">
+
+      <label>Last Name:</label>
+      <input type="text" name="lname" placeholder="Enter last name">
+
+      <label>Password:</label>
+      <input type="password" name="password" placeholder="Enter password">
+
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="example@mail.com">
+
+      <label>Mobile Number:</label>
+      <input type="text" name="mobile" placeholder="10-digit number">
+
+      <label>Address:</label>
+      <textarea name="address" rows="3" placeholder="Enter address"></textarea>
+
+      <div class="btns">
+        <input type="submit" value="Register">
+        <input type="reset" value="Clear">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

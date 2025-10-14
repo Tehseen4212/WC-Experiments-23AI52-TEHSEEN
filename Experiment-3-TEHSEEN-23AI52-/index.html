@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Book Store</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .hero {
+      background: linear-gradient(90deg, rgba(13,110,253,0.08), rgba(255,255,255,0));
+      border-radius: .6rem;
+      padding: 3rem 1.25rem;
+    }
+    .card-img-top { object-fit: cover; height: 240px; }
+    footer { background: #0d6efd; color: #fff; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Online Book Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#books">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="container my-5">
+    <div class="hero d-flex flex-column flex-md-row align-items-center gap-4">
+      <div class="flex-fill">
+        <h1 class="display-6 mb-2">Welcome to the Online Book Store</h1>
+        <p class="lead mb-3">Discover classics, motivational reads, and inspiring biographies — delivered to your doorstep.</p>
+        <a href="#books" class="btn btn-primary btn-lg me-2">Browse Books</a>
+        <a href="#contact" class="btn btn-outline-primary btn-lg">Contact Us</a>
+      </div>
+
+      <div class="d-none d-md-block" style="max-width:240px;">
+        <img src="images/hero_books.jpg" alt="Stack of Books" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+  </header>
+
+  <!-- About & Categories -->
+  <section class="container mb-5">
+    <div class="row gy-4">
+      <div id="about" class="col-lg-7">
+        <h2 class="h4 text-danger">About</h2>
+        <p>
+          Our Online Book Store brings you the best of literature, biographies, and modern self-development titles.
+          Enjoy easy browsing, beautiful summaries, and a simple way to order books you love.
+        </p>
+      </div>
+
+      <aside id="categories" class="col-lg-5">
+        <h2 class="h4 text-danger">Book Categories</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Motivational</li>
+          <li class="list-group-item">Biographies</li>
+          <li class="list-group-item">Classics</li>
+          <li class="list-group-item">Self-Help</li>
+          <li class="list-group-item">Programming</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Books (cards) -->
+  <section id="books" class="container mb-5">
+    <h2 class="h4 text-danger mb-3">Available Books</h2>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="images/cover_alchemist.jpg" class="card-img-top" alt="The Alchemist">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">The Alchemist</h5>
+            <p class="card-text mb-1"><small class="text-muted">Author: Paulo Coelho</small></p>
+            <p class="card-text fw-semibold">Price: ₹499</p>
+            <div class="mt-auto">
+              <a href="#buy" class="btn btn-success w-100">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="images/cover_wings.jpg" class="card-img-top" alt="Wings of Fire">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Wings of Fire</h5>
+            <p class="card-text mb-1"><small class="text-muted">Author: A.P.J. Abdul Kalam</small></p>
+            <p class="card-text fw-semibold">Price: ₹350</p>
+            <div class="mt-auto">
+              <a href="#buy" class="btn btn-success w-100">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img src="images/cover_richdad.jpg" class="card-img-top" alt="Rich Dad Poor Dad">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Rich Dad Poor Dad</h5>
+            <p class="card-text mb-1"><small class="text-muted">Author: Robert Kiyosaki</small></p>
+            <p class="card-text fw-semibold">Price: ₹400</p>
+            <div class="mt-auto">
+              <a href="#buy" class="btn btn-success w-100">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buy Section -->
+  <section id="buy" class="container mb-5">
+    <div class="p-4 bg-white rounded shadow-sm">
+      <h2 class="h5 text-danger">Buy Book</h2>
+      <p>If you'd like to order a book, send us your details using the form below with the book title, and we’ll reach out soon!</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="container mb-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="h5 text-danger mb-3">Contact Us</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Your name">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" placeholder="you@example.com">
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="form-label">Book Title</label>
+              <input type="text" class="form-control" name="book" placeholder="Which book?">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" name="message" placeholder="Any additional details"></textarea>
+            </div>
+            <div class="col-12 d-flex gap-2">
+              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="reset" class="btn btn-outline-secondary">Clear</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 mt-4">
+    <div class="container text-center">
+      <p class="mb-1 small">© <span id="yr"></span> Online Book Store — All rights reserved.</p>
+      <small class="d-block">Follow us on social media for updates</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
